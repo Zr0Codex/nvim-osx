@@ -1,16 +1,16 @@
-require("zr0codex.plugins-setup")
-require("zr0codex.core.options")
-require("zr0codex.core.keymaps")
-require("zr0codex.core.colorscheme")
-require("zr0codex.plugins.comment")
-require("zr0codex.plugins.nvim-tree")
-require("zr0codex.plugins.lualine")
-require("zr0codex.plugins.telescope")
-require("zr0codex.plugins.nvim-cmp")
-require("zr0codex.plugins.lsp.mason")
-require("zr0codex.plugins.lsp.lspsaga")
-require("zr0codex.plugins.lsp.lspconfig")
-require("zr0codex.plugins.lsp.null-ls")
-require("zr0codex.plugins.autopairs")
-require("zr0codex.plugins.treesitter")
-require("zr0codex.plugins.gitsigns")
+require('tohno.base')
+require('tohno.highlights')
+require('tohno.maps')
+require('tohno.plugins')
+
+local has = vim.fn.has
+local is_mac = has "macunix"
+local is_win = has "win32"
+
+if is_mac then
+	require('tohno.macos')
+end
+
+if is_win then
+	require('tohno.windows')
+end
